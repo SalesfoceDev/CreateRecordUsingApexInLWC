@@ -1,0 +1,40 @@
+<template>
+
+    <lightning-card variant="Narrow" title="Create a contact record" icon-name="standard:contact">
+        <!-- Input fields Section -->
+        <div class="slds-m-around_xx-small">
+            <lightning-layout>
+                <lightning-layout-item size="12">
+                    <lightning-input type="text" label="First Name" value={firstName} onchange={handleFirstName}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="12">
+                    <lightning-input type="text" label="Last Name" value={lastName} pattern='^[a-zA-Z][a-zA-Z0-9 ]+$'
+                        required onchange={handleLastName}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="12">
+                    <lightning-input type="Email" label="Email" value={email} onchange={handleEmailName}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <!-- Button Section -->
+        <div class="slds-m-top_small">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="2">
+                    <lightning-button label="Cancel" onclick={handleCancelClick}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <lightning-button variant="brand" label="Save" onclick={handleSaveClick}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
